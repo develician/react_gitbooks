@@ -1,0 +1,280 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Virtual DOM? · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="how_browser_works.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="virtualdom.html">
+            
+                <a href="virtualdom.html">
+            
+                    
+                    Virtual DOM?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="how_browser_works.html">
+            
+                <a href="how_browser_works.html">
+            
+                    
+                    How Browser Work?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Virtual DOM?</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="virtual-dom-">Virtual DOM ?</h1>
+<h2 id="virtual-dom"><code>virtual dom</code></h2>
+<ul>
+<li><p>&#xAC00;&#xC0C1;&#xC758; &#xB3D4; &#xC774;&#xB780; &#xBB34;&#xC5C7;&#xC77C;&#xAE4C;?</p>
+</li>
+<li><p>&#xBCC0;&#xD654;&#xAC00; &#xC77C;&#xC5B4;&#xB098;&#xBA74; Javascript &#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xAC00;&#xC0C1;&#xB3D4;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xC5EC;, &#xC6D0;&#xB798;&#xC758; DOM&#xACFC; &#xBE44;&#xAD50;&#xD55C;&#xB2E4;&#xC74C;, &#xBC14;&#xB010; &#xBD80;&#xBD84;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xC5EC; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xAC83;.</p>
+</li>
+</ul>
+<h2 id="&#xAC00;&#xC0C1;-&#xB3D4;&#xC758;-&#xB77C;&#xC774;&#xD504;-&#xC0AC;&#xC774;&#xD074;">&#xAC00;&#xC0C1; &#xB3D4;&#xC758; &#xB77C;&#xC774;&#xD504; &#xC0AC;&#xC774;&#xD074;..</h2>
+<ol>
+<li>DOM &#xC5D0; &#xBCC0;&#xD654;&#xAC00; &#xC0DD;&#xAE34;&#xB2E4;.</li>
+<li>&#xB80C;&#xB354; &#xD2B8;&#xB9AC;&#xB97C; &#xC7AC;&#xC0DD;&#xC131;&#xD55C;&#xB2E4;. (&#xBAA8;&#xB4E0; &#xC694;&#xC18C;&#xB4E4;&#xC758; &#xC2A4;&#xD0C0;&#xC77C;&#xC774; &#xB2E4;&#xC2DC; &#xACC4;&#xC0B0;)</li>
+<li>&#xB808;&#xC774;&#xC544;&#xC6C3;&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xD398;&#xC778;&#xD305;&#xC744; &#xD55C;&#xB2E4;.</li>
+</ol>
+<p>1 ~ 3 &#xACFC;&#xC815;&#xC774; &#xBC18;&#xBCF5;&#xB41C;&#xB2E4;.</p>
+<h2 id="&#xC815;&#xB9AC;">&#xC815;&#xB9AC;.</h2>
+<p>&#xC2E4;&#xC81C;&#xB85C; &#xBC14;&#xB010; &#xBD80;&#xBD84;&#xB9CC; &#xACC4;&#xC0B0;&#xC744; &#xD558;&#xC5EC; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xAC8C; &#xBCF4;&#xC5EC;&#xC8FC;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xBD88;&#xD544;&#xC694;&#xD55C; &#xC5F0;&#xC0B0;&#xC774; &#xD544;&#xC694;&#xC5C6;&#xAC8C; &#xB418;&#xC5B4;, &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xC131;&#xB2A5;&#xC744; &#xD5A5;&#xC0C1;&#xC2DC;&#xD0A8;&#xB2E4;.</p>
+<h2 id="virtual-dom&#xC758;-&#xC7A5;&#xC810;">Virtual DOM&#xC758; &#xC7A5;&#xC810;.</h2>
+<p>&#xC0AC;&#xC2E4; &#xBC14;&#xB010; &#xBD80;&#xBD84;&#xB9CC; &#xC801;&#xC6A9;&#xD55C;&#xB2E4;&#xC74C; &#xD55C;&#xBC88;&#xB9CC; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294;&#xAC83;&#xC740; &#xBCC0;&#xD654;&#xB97C; DOM Fragment &#xC5D0; &#xBB36;&#xC5B4;&#xC11C; &#xD55C;&#xBC88;&#xB9CC; &#xBCF4;&#xC5EC;&#xC904;&#xC218;&#xB3C4; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, Virtual DOM&#xC744; &#xC4F0;&#xB294; &#xC7A5;&#xC810;&#xC774; &#xBD80;&#xAC01;&#xB418;&#xC9C0; &#xC54A;&#xC744;&#xC218;&#xB3C4; &#xC788;&#xB2E4;.
+&#xADF8;&#xB807;&#xB2E4;&#xBA74; Virtual DOM&#xC758; &#xACE0;&#xC720;&#xD55C; &#xC7A5;&#xC810;&#xC740; &#xBB34;&#xC5C7;&#xC778;&#xAC00;?
+<strong>DOM Fragment&#xB97C; &#xAD00;&#xB9AC;&#xD558;&#xB294; &#xACFC;&#xC815;&#xC744; &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xD558;&#xB098;&#xD558;&#xB098; &#xD560; &#xD544;&#xC694; &#xC5C6;&#xC774; &#xC790;&#xB3D9;&#xD654; &#xD558;&#xACE0; &#xCD94;&#xC0C1;&#xD654; &#xD558;&#xC5EC;&#xC900;&#xB2E4;.</strong> &#xADF8;&#xB9AC;&#xACE0; &#xAE30;&#xC874;&#xAC12;&#xC5D0;&#xC11C; &#xBC14;&#xB010; &#xAC12;&#xC774; &#xBB34;&#xC5C7;&#xC778;&#xC9C0; &#xC54C;&#xC544; &#xB0B4;&#xC8FC;&#xB294; &#xC791;&#xC5C5;&#xC744; &#xC790;&#xB3D9;&#xD654; &#xD55C;&#xB2E4;. DOM &#xAD00;&#xB9AC;&#xB97C; virtual DOM&#xC774; &#xD558;&#xAC8C; &#xD568;&#xC73C;&#xB85C;&#xC368;, &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; DOM &#xC870;&#xC791; &#xC694;&#xCCAD;&#xC744; &#xD560;&#xB54C; &#xB2E4;&#xB978; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xC640; &#xC0C1;&#xD638;&#xC791;&#xC6A9;&#xC744; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB418;&#xC5B4;, &#xD2B9;&#xC815; DOM&#xC744; &#xC870;&#xC791;&#xD560;&#xAC83;&#xC774;&#xB77C;&#xB358;&#xC9C0;, &#xC774;&#xBBF8; &#xC870;&#xC791;&#xD588;&#xB2E4;&#xB358;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;. <strong>&#xC989; &#xAC01; &#xBCC0;&#xD654;&#xC5D0; &#xB300;&#xD574; &#xB3D9;&#xAE30;&#xD654; &#xC791;&#xC5C5;&#xC744; &#xAC70;&#xCE58;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;&#xC11C;&#xB3C4;, &#xBAA8;&#xB4E0; &#xC791;&#xC5C5;&#xC744; &#xD558;&#xB098;&#xB85C; &#xBB36;&#xC5B4;&#xC904;&#xC218; &#xC788;&#xB2E4;.</strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="how_browser_works.html" class="navigation navigation-next " aria-label="Next page: How Browser Work?">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Virtual DOM?","level":"1.2","depth":1,"next":{"title":"How Browser Work?","level":"1.3","depth":1,"path":"how_browser_works.md","ref":"how_browser_works.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"virtualdom.md","mtime":"2019-01-14T01:23:42.509Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T01:12:23.886Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

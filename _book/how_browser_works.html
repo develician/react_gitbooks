@@ -1,0 +1,319 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>How Browser Work? · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="virtualdom.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="virtualdom.html">
+            
+                <a href="virtualdom.html">
+            
+                    
+                    Virtual DOM?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="how_browser_works.html">
+            
+                <a href="how_browser_works.html">
+            
+                    
+                    How Browser Work?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >How Browser Work?</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294;-&#xC5B4;&#xB5BB;&#xAC8C;-&#xC791;&#xB3D9;&#xD560;&#xAE4C;">&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xC791;&#xB3D9;&#xD560;&#xAE4C;?</h1>
+<p>&#xCD9C;&#xCC98;: [<a href="https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/" target="_blank">https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/</a>]</p>
+<p>In the years of IE 90% dominance there was nothing much to do but regard the browser as a &quot;black box&quot;, but now, with open source browsers having more than half of the usage share, it&apos;s a good time to take a peek under the engine&apos;s hood and see what&apos;s inside a web browser. Well, what&apos;s inside are millions of C++ lines...</p>
+<p>IE&#xAC00; 90%&#xC774;&#xC0C1;&#xC744; &#xC9C0;&#xBC30;&#xD558;&#xB358; &#xC2DC;&#xAE30;&#xC5D0;&#xB294; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; <strong>&#xBE14;&#xB799;&#xBC15;&#xC2A4;</strong>&#xCC98;&#xB7FC; &#xAC00;&#xB824;&#xC838; &#xC788;&#xC5C8;&#xAE30;&#xC5D0;, &#xB531;&#xD788; &#xC8FC;&#xBAA9; &#xD560;&#xAC83;&#xC774; &#xC5C6;&#xC5C8;&#xC73C;&#xB098;, &#xD604;&#xC7AC;&#xB294;, &#xC624;&#xD508;&#xC18C;&#xC2A4; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB4E4;&#xC774; &#xC544;&#xC8FC; &#xB9CE;&#xC774; &#xC4F0;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC5D4;&#xC9C4;&#xC774; &#xC5B4;&#xB5BB;&#xAC8C; &#xC791;&#xB3D9;&#xD558;&#xACE0;, &#xC6F9;&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xB0B4;&#xBD80;&#xB97C; &#xBCFC;&#xB9CC;&#xD560;&#xAC83; &#xAC19;&#xB2E4;. &#xC0AC;&#xC2E4;, &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xB0B4;&#xBD80;&#xC5D0;&#xB294; &#xC218;&#xBC31;&#xB9CC;&#xC904;&#xC758; C++&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xCF54;&#xB4DC;&#xB4E4;&#xC774; &#xC788;&#xB2E4;...</p>
+<p>As a web developer, learning the internals of browser operations helps you make better decisions and know the justifications behind development best practices. While this is a rather lengthy document, we recommend you spend some time digging in; we guarantee you&apos;ll be glad you did. Paul Irish, Chrome Developer Relations.</p>
+<p>Web Developer(&#xC6F9; &#xAC1C;&#xBC1C;&#xC790;)&#xB85C;&#xC368;, &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xB0B4;&#xBD80; &#xC5F0;&#xC0B0;&#xC5D0; &#xB300;&#xD574; &#xD559;&#xC2B5;&#xD558;&#xB294; &#xAC83;&#xC740; &#xB354; &#xB098;&#xC740; &#xACB0;&#xC815;&#xACFC; &#xCD5C;&#xC801;&#xC758; &#xAC1C;&#xBC1C; &#xBC29;&#xC2DD;&#xC744; &#xC815;&#xC758; &#xD558;&#xB294;&#xAC83;&#xC5D0; &#xB3C4;&#xC6C0;&#xC774; &#xB420;&#xAC83;&#xC774;&#xB2E4;.
+&#xC774;&#xAC83;&#xC740; &#xB9E4;&#xC6B0; &#xAE34; &#xBB38;&#xC11C;&#xC774;&#xBBC0;&#xB85C;, &#xC9D1;&#xC911;&#xD560; &#xC2DC;&#xAC04;&#xC744; &#xAC16;&#xB294;&#xAC83;&#xC744; &#xCD94;&#xCC9C;&#xD55C;&#xB2E4;. &#xADF8; &#xC2DC;&#xAC04;&#xC774; &#xC544;&#xAE5D;&#xC9C0; &#xC54A;&#xC744;&#xAC83;&#xC774;&#xB2E4;. Paul Irish, &#xD06C;&#xB86C; &#xAC1C;&#xBC1C;&#xC790; &#xC5F0;&#xD569;.</p>
+<h2 id="introduction-&#xC18C;&#xAC1C;">Introduction (&#xC18C;&#xAC1C;)</h2>
+<p>Web browsers are the most widely used software. In this primer, I will explain how they work behind the scenes. We will see what happens when you type google.com in the address bar until you see the Google page on the browser screen.</p>
+<p>&#xC6F9; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB4E4;&#xC740; &#xAC00;&#xC7A5; &#xB110;&#xB9AC; &#xC4F0;&#xB294; &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4;&#xC774;&#xB2E4;. &#xB4A4;&#xC5D0;&#xC11C; &#xC5B4;&#xB5A4; &#xC791;&#xC5C5;&#xC744; &#xD558;&#xB294;&#xC9C0; &#xC124;&#xBA85;&#xD574;&#xC904;&#xAC83;&#xC774;&#xB2E4;. &#xB2F9;&#xC2E0;&#xC774; google.com &#xC744; &#xD0C0;&#xC774;&#xD551;&#xD588;&#xC744;&#xB54C;, &#xAD6C;&#xAE00; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xB098;&#xD0C0;&#xB098;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xC5B4;&#xB5A4;&#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xB294;&#xC9C0; &#xBCFC;&#xAC83;&#xC774;&#xB2E4;.</p>
+<h3 id="the-browsers-we-will-talk-about">The browsers we will talk about</h3>
+<p>There are five major browsers used on desktop today: Chrome, Internet Explorer, Firefox, Safari and Opera. On mobile, the main browsers are Android Browser, iPhone, Opera Mini and Opera Mobile, UC Browser, the Nokia S40/S60 browsers and Chrome&#x2013;all of which, except for the Opera browsers, are based on WebKit. I will give examples from the open source browsers Firefox and Chrome, and Safari (which is partly open source). According to StatCounter statistics (as of June 2013) Chrome, Firefox and Safari make up around 71% of global desktop browser usage. On mobile, Android Browser, iPhone and Chrome constitute around 54% of usage.</p>
+<h3 id="&#xC6B0;&#xB9AC;&#xAC00;-&#xB2E4;&#xB904;&#xBCFC;-&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB4E4;">&#xC6B0;&#xB9AC;&#xAC00; &#xB2E4;&#xB904;&#xBCFC; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB4E4;.</h3>
+<p>&#xC694;&#xC998;&#xC5D0;&#xB294; 5&#xAC1C;&#xC758; &#xBA54;&#xC774;&#xC800;&#xD55C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB4E4;&#xC774; &#xC788;&#xB2E4;: &#xD06C;&#xB86C;, IE, &#xD30C;&#xC774;&#xC5B4;&#xD3ED;&#xC2A4;, &#xC0AC;&#xD30C;&#xB9AC; &#xADF8;&#xB9AC;&#xACE0; &#xC624;&#xD398;&#xB77C;. &#xBAA8;&#xBC14;&#xC77C; &#xC5D0;&#xC11C;&#xB294;, &#xBA54;&#xC778; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294; Android &#xBE0C;&#xB77C;&#xC6B0;&#xC800;, &#xC544;&#xC774;&#xD3F0;, &#xC624;&#xD398;&#xB77C; &#xBBF8;&#xB2C8;&#xC640; &#xC624;&#xD398;&#xB77C; &#xBAA8;&#xBC14;&#xC77C;, UCa &#xBE0C;&#xB77C;&#xC6B0;&#xC800;, &#xB178;&#xD0A4;&#xC544; &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xADF8;&#xB9AC;&#xACE0; &#xD06C;&#xB86C;&#xC774; &#xC788;&#xB2E4;. &#xC624;&#xD398;&#xB77C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB97C; &#xC81C;&#xC678;&#xD558;&#xACE0;&#xB294; &#xBAA8;&#xB450; WebKit&#xC5D0; &#xAE30;&#xBC18;&#xB418;&#xC5B4;&#xC788;&#xB2E4;.
+&#xD30C;&#xD3ED;, &#xD06C;&#xB86C;, &#xC0AC;&#xD30C;&#xB9AC; (&#xC0AC;&#xD30C;&#xB9AC;&#xB294; &#xBD80;&#xBD84;&#xC801; &#xC624;&#xD508;&#xC18C;&#xC2A4;)&#xC640; &#xAC19;&#xC740; &#xC624;&#xD508;&#xC18C;&#xC2A4;&#xB4E4;&#xC758; &#xC608;&#xC81C;&#xB97C; &#xBCF4;&#xC5EC;&#xC904;&#xAC83;&#xC774;&#xB2E4;. 2013&#xB144; 6&#xC6D4;&#xC758; &#xB9AC;&#xC11C;&#xCE58;&#xC5D0; &#xB530;&#xB974;&#xBA74;, &#xD30C;&#xD3ED;&#xACFC; &#xC0AC;&#xD30C;&#xB9AC;&#xAC00; 71%&#xC815;&#xB3C4;&#xC758; &#xB370;&#xC2A4;&#xD06C;&#xD0D1; &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xC0AC;&#xC6A9;&#xB7C9;&#xC744; &#xB2EC;&#xD558;&#xACE0; &#xC788;&#xC5C8;&#xB2E4;&#xACE0; &#xD55C;&#xB2E4;. &#xBAA8;&#xBC14;&#xC77C;&#xC5D0;&#xC11C;&#xB294;, &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;, &#xC544;&#xC774;&#xD3F0; &#xADF8;&#xB9AC;&#xACE0; &#xD06C;&#xB86C;&#xC774; &#xD569;&#xD574;&#xC11C; 54&#xD504;&#xB85C;&#xC758; &#xC0AC;&#xC6A9;&#xB7C9;&#xC744; &#xCC28;&#xC9C0;&#xD588;&#xB2E4;.</p>
+<h3 id="the-browsers-main-functionality">The browser&apos;s main functionality</h3>
+<p>The main function of a browser is to present the web resource you choose, by requesting it from the server and displaying it in the browser window. The resource is usually an HTML document, but may also be a PDF, image, or some other type of content. The location of the resource is specified by the user using a URI (Uniform Resource Identifier).</p>
+<p>The way the browser interprets and displays HTML files is specified in the HTML and CSS specifications. These specifications are maintained by the W3C (World Wide Web Consortium) organization, which is the standards organization for the web. For years browsers conformed to only a part of the specifications and developed their own extensions. That caused serious compatibility issues for web authors. Today most of the browsers more or less conform to the specifications.</p>
+<p>Browser user interfaces have a lot in common with each other. Among the common user interface elements are:</p>
+<ul>
+<li>Address bar for inserting a URI</li>
+<li>Back and forward buttons</li>
+<li>Bookmarking options</li>
+<li>Refresh and stop buttons for refreshing or stopping the loading of current documents</li>
+<li>Home button that takes you to your home page</li>
+</ul>
+<h3 id="&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00;-&#xC8FC;&#xB418;&#xAC8C;-&#xD558;&#xB294;&#xC77C;">&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xC8FC;&#xB418;&#xAC8C; &#xD558;&#xB294;&#xC77C;</h3>
+<p>&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xC8FC;&#xB41C; &#xC5C5;&#xBB34;&#xB294; &#xB2F9;&#xC2E0;&#xC774; &#xC120;&#xD0DD;&#xD55C; web resource&#xB97C; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xAC83;&#xC774;&#xB2E4;. (&#xC11C;&#xBC84;&#xC5D0;&#xC11C; &#xC694;&#xC815;&#xD558;&#xC5EC; &#xB2F9;&#xC2E0;&#xC758; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC0C1;&#xC758; &#xCC3D;&#xC73C;&#xB85C;)
+&#xADF8; resource&#xB294; &#xB300;&#xAC1C; HTML&#xC774;&#xB2E4;. PDF&#xB3C4; &#xB420;&#xC218; &#xC788;&#xACE0;, &#xC774;&#xBBF8;&#xC9C0;&#xB098; &#xB2E4;&#xB978; &#xCEE8;&#xD150;&#xD2B8;&#xB4E4;&#xC774; &#xB420;&#xC218;&#xB3C4; &#xC788;&#xB2E4;.
+URI&#xB77C;&#xB294; &#xAC83;&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC720;&#xC800;&#xAC00; &#xADF8; &#xB9AC;&#xC18C;&#xC2A4;&#xB4E4;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xC54C;&#xC544;&#xB0BC;&#xC218; &#xC788;&#xB2E4;.</p>
+<p>&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xD574;&#xC11D;&#xD558;&#xACE0; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; HTML &#xD30C;&#xC77C;&#xB4E4;&#xC740; HTML &#xC5B8;&#xC5B4;&#xC640; CSS &#xC2A4;&#xD399;&#xC73C;&#xB85C; &#xB2E8;&#xC815;&#xC9C0;&#xC744;&#xC218; &#xC788;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC2A4;&#xD399;&#xB4E4;&#xC740; W3C&#xC5D0;&#xC11C; &#xAD00;&#xB9AC;&#xB41C;&#xB2E4;. (&#xC6F9;&#xC758; &#xD45C;&#xC900;&#xC744; &#xADDC;&#xC815;&#xD558;&#xB294; &#xAE30;&#xAD6C;). &#xC218;&#xB144;&#xB3D9;&#xC548;, &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294; &#xC2A4;&#xD399;&#xB4E4;&#xC758; &#xB2E8;&#xBD80;&#xBD84;&#xC73C;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC838;&#xC788;&#xC5C8;&#xACE0; &#xADF8;&#xB4E4;&#xC758; &#xD655;&#xC7A5;&#xC744; &#xACC4;&#xC18D; &#xAC1C;&#xBC1C;&#xD574; &#xB098;&#xAC14;&#xB2E4;. &#xADF8;&#xAC83;&#xC774; &#xC6F9; &#xC800;&#xC790;&#xB4E4;&#xC5D0;&#xAC8C; &#xC2EC;&#xAC01;&#xD55C; &#xC801;&#xD569;&#xC131; &#xC774;&#xC288;&#xB4E4;&#xC744; &#xC57C;&#xAE30;&#xD588;&#xB2E4;. &#xC624;&#xB298;&#xB0A0; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB4E4;&#xC740; &#xC774;&#xB7EC;&#xD55C; &#xADDC;&#xC815;&#xB4E4;&#xC5D0; &#xB530;&#xB974;&#xACE0; &#xC788;&#xB2E4;.</p>
+<p>&#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xC0AC;&#xC6A9;&#xC790; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB4E4;&#xC740; (Browser UI) &#xB2E4;&#xB978;&#xAC83;&#xB4E4;&#xACFC; &#xB9CE;&#xC774; &#xACF5;&#xD1B5;&#xC810;&#xC774; &#xC788;&#xB2E4;. &#xACF5;&#xD1B5;&#xB41C; &#xC720;&#xC800; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB4E4;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;:</p>
+<ul>
+<li>&#xC8FC;&#xC18C;&#xB97C; &#xCE60;&#xC218; &#xC788;&#xB294; &#xC8FC;&#xC18C;&#xCC3D;</li>
+<li>&#xC55E;&#xC73C;&#xB85C; &#xB4A4;&#xB85C;&#xAC00;&#xAE30; &#xBC84;&#xD2BC;</li>
+<li>&#xBD81;&#xB9C8;&#xD06C;(&#xC990;&#xACA8;&#xCC3E;&#xAE30;) &#xC635;&#xC158;</li>
+<li>&#xC0C8;&#xB85C;&#xACE0;&#xCE68;&#xACFC; &#xC815;&#xC9C0; &#xBC84;&#xD2BC;</li>
+<li>&#xD648;&#xD398;&#xC774;&#xC9C0;&#xB85C; &#xAC00;&#xAC8C;&#xD558;&#xB294; &#xD648;&#xBC84;&#xD2BC;</li>
+</ul>
+<p>Strangely enough, the browser&apos;s user interface is not specified in any formal specification, it just comes from good practices shaped over years of experience and by browsers imitating each other. The HTML5 specification doesn&apos;t define UI elements a browser must have, but lists some common elements. Among those are the address bar, status bar and tool bar. There are, of course, features unique to a specific browser like Firefox&apos;s downloads manager.</p>
+<p>&#xC774;&#xC0C1;&#xD558;&#xAC8C;&#xB3C4;, &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB4E4;&#xC758; &#xC720;&#xC800; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xC5B4;&#xB5A0;&#xD55C; &#xC815;&#xD574;&#xC9C4; &#xBC29;&#xBC95;&#xB300;&#xB85C; &#xADDC;&#xC815;&#xB418;&#xC788;&#xC9C0; &#xC54A;&#xB2E4;, &#xB2E8;&#xC9C0; &#xADF8;&#xB0E5; &#xB354; &#xC88B;&#xC73C;&#xBA74; &#xADF8;&#xAC83;&#xC744; &#xC801;&#xC6A9;&#xD558;&#xACE0; &#xB098;&#xBA38;&#xC9C0;&#xB4E4;&#xC774; &#xB530;&#xB77C;&#xAC00;&#xB294; &#xBC29;&#xC2DD;&#xC774;&#xB2E4;. HTML5 &#xADDC;&#xC815;&#xC740; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xBC18;&#xB4DC;&#xC2DC; &#xAC16;&#xCDB0;&#xC57C;&#xD560; UI &#xC5D8;&#xB9AC;&#xBA3C;&#xD2B8;&#xB4E4;&#xC744; &#xC815;&#xC758;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;, &#xB2E4;&#xB9CC; &#xADF8;&#xB0E5; &#xACF5;&#xD1B5;&#xB41C; &#xC694;&#xC18C;&#xB4E4;&#xC744; &#xB098;&#xC5F4;&#xD560; &#xBFD0;&#xC774;&#xB2E4;. &#xC8FC;&#xC18C;&#xCC3D;, &#xC0C1;&#xD0DC;&#xCC3D;, &#xD234;&#xBC14;&#xC640; &#xAC19;&#xC740; &#xAC83;&#xB4E4;&#xC744;. &#xBB3C;&#xB860;, &#xD30C;&#xC774;&#xC5B4;&#xD3ED;&#xC2A4;&#xC758; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xB9E4;&#xB2C8;&#xC800;&#xC640; &#xAC19;&#xC740; &#xD2B9;&#xC774;&#xD55C; &#xAE30;&#xB2A5;&#xB3C4; &#xC788;&#xB2E4;.</p>
+<h3 id="the-browsers-high-level-structure">The browser&apos;s high level structure</h3>
+<p>The browser&apos;s main components are (1.1):</p>
+<p>1 .The user interface: this includes the address bar, back/forward button, bookmarking menu, etc. Every part of the browser display except the window where you see the requested page.</p>
+<ol>
+<li>The browser engine: marshals actions between the UI and the rendering engine.</li>
+<li>The rendering engine : responsible for displaying requested content. For example if the requested content is HTML, the rendering engine parses HTML and CSS, and displays the parsed content on the screen.</li>
+<li>Networking: for network calls such as HTTP requests, using different implementations for different platform behind a platform-independent interface.</li>
+<li>UI backend: used for drawing basic widgets like combo boxes and windows. This backend exposes a generic interface that is not platform specific. Underneath it uses operating system user interface methods.</li>
+<li>JavaScript interpreter. Used to parse and execute JavaScript code.</li>
+<li>Data storage. This is a persistence layer. The browser may need to save all sorts of data locally, such as cookies. Browsers also support storage mechanisms such as localStorage, IndexedDB, WebSQL and FileSystem.</li>
+</ol>
+<h3 id="&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758;-&#xACE0;&#xC218;&#xC900;-&#xAD6C;&#xC870;">&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xACE0;&#xC218;&#xC900; &#xAD6C;&#xC870;</h3>
+<p>&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xC8FC;&#xB41C; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB4E4;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4; :</p>
+<ol>
+<li>UI: &#xC8FC;&#xC18C;&#xCC3D;, &#xB4A4;&#xB85C;&#xAC00;&#xAE30; &#xC55E;&#xC73C;&#xB85C;&#xAC00;&#xAE30; &#xBC84;&#xD2BC;, &#xBD81;&#xB9C8;&#xD06C; &#xBA54;&#xB274;, &#xB4F1;&#xB4F1; &#xC744; &#xD3EC;&#xD568;&#xD55C;&#xB2E4;. &#xB2F9;&#xC2E0;&#xC774; &#xBCF4;&#xACE0;&#xC788;&#xB294; &#xCC3D;&#xC5D0;&#xC11C; &#xB098;&#xD0C0;&#xB098;&#xB294; &#xBAA8;&#xB4E0; &#xD30C;&#xD2B8;&#xB4E4;&#xC774;&#xB2E4;.</li>
+<li>&#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xC5D4;&#xC9C4;: UI&#xC640; &#xB80C;&#xB354;&#xB9C1; &#xC5D4;&#xC9C4; &#xC0AC;&#xC774;&#xC5D0;&#xC11C; &#xC561;&#xC158;&#xB4E4;&#xC744; &#xADDC;&#xC81C;&#xD55C;&#xB2E4;.</li>
+<li>&#xB80C;&#xB354;&#xB9C1; &#xC5D4;&#xC9C4;: &#xC694;&#xCCAD;&#xD55C; &#xCEE8;&#xD150;&#xD2B8;&#xB4E4;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xC5ED;&#xD560;&#xC744; &#xD55C;&#xB2E4;. &#xC608;&#xB97C;&#xB4E4;&#xBA74; &#xC694;&#xCCAD;&#xB41C; &#xCEE8;&#xD150;&#xD2B8;&#xAC00; HTML &#xC774;&#xB77C;&#xBA74;, &#xB80C;&#xB354;&#xB9C1; &#xC5D4;&#xC9C4;&#xC774; HTML&#xACFC; CSS&#xB97C; &#xD30C;&#xC2F1;&#xD55C;&#xB2E4;, &#xADF8;&#xB9AC;&#xACE0; &#xD30C;&#xC2F1;&#xB41C; &#xCEE8;&#xD150;&#xD2B8;&#xB4E4;&#xC744; &#xC2A4;&#xD06C;&#xB9B0;&#xC5D0; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;.</li>
+<li>&#xB124;&#xD2B8;&#xC6CC;&#xD0B9;: HTTP &#xC694;&#xCCAD;&#xACFC; &#xAC19;&#xC740; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC694;&#xCCAD;&#xC744; &#xC704;&#xD574;&#xC11C;, &#xB2E4;&#xB978; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0; &#xC758;&#xC874;&#xD558;&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB4E4;&#xC744; &#xC704;&#xD574; &#xB2E4;&#xB978; &#xC2E4;&#xD589;&#xC744; &#xD55C;&#xB2E4;.</li>
+<li>UI &#xBC31;&#xC5D4;&#xB4DC;: &#xAE30;&#xCD08;&#xC801;&#xC778; &#xC704;&#xC82F;(&#xCF64;&#xBCF4;&#xBC15;&#xC2A4;&#xC640; &#xCC3D; &#xAC19;&#xC740;)&#xB4E4;&#xC744; &#xADF8;&#xB9AC;&#xB294;&#xB370;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C;&#xB2E4;. &#xC774; &#xBC31;&#xC5D4;&#xB4DC;&#xB294; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB974;&#xC9C0; &#xC54A;&#xC740; &#xACF5;&#xD1B5;&#xC801;&#xC778; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB4E4;&#xC744; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;.</li>
+<li>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC778;&#xD130;&#xD504;&#xB9AC;&#xD130;: &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xCF54;&#xB4DC;&#xB97C; &#xD30C;&#xC2F1;&#xD558;&#xACE0; &#xC2E4;&#xD589;&#xD558;&#xB294;&#xB370; &#xC4F0;&#xC778;&#xB2E4;.</li>
+<li>&#xB370;&#xC774;&#xD130; &#xC2A4;&#xD1A0;&#xB9AC;&#xC9C0;: &#xC601;&#xAD6C;&#xC801;&#xC778; &#xCE35;&#xC774;&#xB2E4;. &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xC5B4;&#xB5A4; &#xC77C;&#xB828;&#xC758; &#xB370;&#xC774;&#xD130;&#xB4E4;&#xC744; &#xC9C0;&#xC5ED;&#xC801;&#xC73C;&#xB85C; &#xC800;&#xC7A5;&#xD558;&#xB294;&#xAC83;&#xC774; &#xD544;&#xC694;&#xD560;&#xC218;&#xB3C4;&#xC788;&#xB2E4;.(&#xC608;&#xB97C;&#xB4E4;&#xC790;&#xBA74; &#xCFE0;&#xD0A4;&#xAC19;&#xC740;&#xAC83;&#xB4E4;). &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294; &#xB610;&#xD55C; localStorage, IndexedDB, WebSQL &#xADF8;&#xB9AC;&#xACE0; FileSystem&#xACFC; &#xAC19;&#xC740; &#xC800;&#xC7A5; &#xBA54;&#xCEE4;&#xB2C8;&#xC998;&#xC744; &#xC9C0;&#xC6D0;&#xD55C;&#xB2E4;.</li>
+</ol>
+<p><img src="https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/layers.png" alt="High Level Structure of Browser Diagram"></p>
+<p>It is important to note that browsers such as Chrome run multiple instances of the rendering engine: one for each tab. Each tab runs in a separate process.</p>
+<p>&#xD06C;&#xB86C;&#xACFC; &#xAC19;&#xC740; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB4E4;&#xC774; &#xB80C;&#xB354;&#xB9C1; &#xC5D4;&#xC9C4;&#xC758; &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB4E4;&#xC744; &#xC2E4;&#xD589; &#xD558;&#xB294;&#xAC83;&#xC740; &#xC8FC;&#xBAA9;&#xD574;&#xBCFC;&#xB9CC; &#xD558;&#xB2E4;: &#xD558;&#xB098;&#xC758; &#xD0ED;&#xC5D0;&#xC11C; &#xD558;&#xB098;&#xD558;&#xB098;&#xC529;. &#xAC01; &#xD0ED;&#xB4E4;&#xC740; &#xB098;&#xB204;&#xC5B4;&#xC9C4; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="virtualdom.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Virtual DOM?">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"How Browser Work?","level":"1.3","depth":1,"previous":{"title":"Virtual DOM?","level":"1.2","depth":1,"path":"virtualdom.md","ref":"virtualdom.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"how_browser_works.md","mtime":"2019-01-14T01:51:32.105Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T01:12:23.886Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
